@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ EDEN Beauty</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="detail.css">
+    <link rel="layout" href="responsive.css" >
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+<header class="header">
+    <div class="header-container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+            <img src="link-hinh-logo.jpg" alt="Logo Website">
+        </a>
+
+        <!-- Thanh tìm kiếm -->
+        <div class="search-box">
+            <input 
+                type="text" 
+                class="search-txt" 
+                placeholder="Tìm kiếm sản phẩm..." 
+                required>
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+
+        <!-- Liên kết tài khoản và giỏ hàng -->
+        <div class="header-links">
+            <a href="account.html" class="account-link" title="Tài khoản">
+                <i class="fas fa-user"></i>
+            </a>
+            <a href="cart.html" class="cart-link" title="Giỏ hàng">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!--MENU-->
+<div class="menu">
+    <nav class="main-menu">
+        <ul class="display1">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="product.html">Sản Phẩm<span class="arrow">&#9662;</span></a>
+                <ul class="submenu1">
+                    <li><a href="skincare.html">Skincare<span class="arrow">&#9656;</span></a>
+                        <ul class="submenu2">
+                            <li><a href="face-care.html">Chăm sóc mặt</a></li>
+                            <li><a href="body-care.html">Chăm sóc cơ thể</a></li>
+                            <li><a href="hair-care.html">Chăm sóc tóc</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="makeup.html">Makeup</a></li>
+                    <li><a href="perfume.html">Nước hoa</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#big-sale">Hot Deal</a></li>
+            <li><a href="index.html#featured-products">Bán chạy</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!--CHI TIẾT SẢN PHẨM -->
+<div class="product-detail">
+    <div class="detail-container">
+        <div class="detail-left">
+            <img id="detail-image" src="detail.jpg" alt="Hình ảnh sản phẩm" class="detail-image">
+            <div class="gallery-image">
+            <div class="sub-image">
+                <img src="detail1.jpg" alt="size S: 150ml" class="sub-image1">
+                <img src="detail2.jpg" alt="size M: 250ml" class="sub-image1">
+                <img src="detail3.webp" alt="size L: 350ml" class="sub-image1">
+            </div>
+        </div>
+    </div>
+        <div class="detail-right">
+            <h1 id="detailName" class="detail-name">Kem dưỡng ẩm Cerave Moisturzing</h1>
+            <p id="detailDescri" class="detail-descri">
+                Thương hiệu: <span class="nsx">Cerave</span>
+            </p>
+            <div class="detail-price" id="đetailPrice">250,000 VND</div>
+            
+            <!-- chọn size-->
+            <div class="detail-size">
+                <label for="size">tùy chọn:</label>
+                <select id="size" class="size-select">
+                    <option value="S">150ml</option>
+                    <option value="M">250ml</option>
+                    <option value="L">350ml</option>
+                </select>
+            </div>
+             <!-- chọn số lượng -->
+             <div class="quantity">
+                <label for="quantity">Số lượng:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1" max="10">
+            </div>
+
+            <button class="buy-now" onclick="window.location.href='checkout.html'">Mua ngay</button>
+            <button class="add-to-cart" id="addToCart">Thêm vào giỏ hàng</button>
+        </div>
+    </div>
+</div>
+<script> 
+//thêm vào giỏ hàng
+addToCartButton = document.getElementById('addToCart');
+addToCartButton.addEventListener('click', function() {
+    alert("Đã thêm sản phẩm vào giỏ hàng");
+});
+</script>
+<script>
+    //chuyển ảnh mô tả
+    const subImages = document.querySelectorAll('.sub-image1');
+    const mainImage = document.getElementById('detail-image');
+    subImages.forEach(subImage => {
+        subImage.addEventListener('click', (e) => {
+           mainImage.src = e.target.src;
+    });
+});
+</script>
+
+<!--MÔ TẢ SẢN PHẨM-->
+<div class="product-description">
+  <div class="decri">
+    <h2>Kem Dưỡng Cerave Moisturizing</h2>
+    <p><strong>Mô tả sản phẩm:</strong></p>
+    <p>Kem Dưỡng Cerave Cho Da Khô Đến Rất Khô là sản phẩm kem dưỡng đến từ thương hiệu mỹ phẩm Cerave của Mỹ, với 3 ceramide tự nhiên và Axit Hyaluronic, những chất cần thiết trong việc hỗ trợ hàng rào bảo vệ da và duy trì độ ẩm. Sử dụng công nghệ phân phối MVE đã được cấp bằng sáng chế để giúp bổ sung ceramides và cung cấp quá trình hydrat hóa lâu dài có kiểm soát, khoá ẩm cho làn da suốt cả ngày.</p>
+  </div>
+  <div class="ts">
+    <p><strong>Thông số sản phẩm:</strong></p>
+    <table>
+        <tr>
+          <th>Tên sản phẩm</th>
+          <td>Kem Dưỡng Cerave Cho Da Khô Đến Rất Khô</td>
+        </tr>
+        <tr>
+          <th>Thương hiệu</th>
+          <td>Cerave</td>
+        </tr>
+        <tr>
+          <th>Xuất xứ</th>
+          <td>Mỹ</td>
+        </tr>
+        <tr>
+          <th>Loại da</th>
+          <td>Da khô, rất khô</td>
+        </tr>
+      </table>
+  </div>
+  <div class="tp">
+    <p><strong>Thành phần:</strong></p>
+        <p>Aqua / Water, Glycerin, Cetearyl Alcohol, Caprylic/Capric Triglyceride, Cetyl Alcohol, Ceteareth-20, Petrolatum, Dimethicon, Phenoxyethanol, Behentrimonium Methosulfate, Potassium Phosphate, Ethylhexylglycerin, Sodium Lauroyl Lactylate, Disodium Edta, Dipotassium Phosphate, Ceramide Np, Ceramide Ap, Phytosphingosine, Cholesterol, Xanthan Gum, Carbomer,Sodium Hyaluronate,Tocopherol,Ceramide Eop (F.I.L. D213768/1)</p>
+  </div>
+</div>
+
+
+    <!-- xem thêm sản phẩm -->
+    <div class="view-more-products">
+        <a href="product.html" class="view-more-btn">← Xem các sản phẩm khác</a>
+    </div>
+
+<!--FOOTER-->
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Thông tin liên hệ -->
+        <div class="footer-contact">
+            <h3>Thông tin liên hệ</h3>
+            <p>Địa chỉ: 273 An Dương Vương, Quận 5, TP.HCM</p>
+            <p>Điện thoại: 0123 456 789</p>
+            <p>Email: support@EdenBeauty.com</p>
+        </div>
+        <!-- Liên kết nhanh -->
+        <div class="footer-links">
+            <h3>Liên kết nhanh</h3>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="about.html">Giới thiệu</a></li>
+                <li><a href="products.html">Sản phẩm</a></li>
+                <li><a href="contact.html">Liên hệ</a></li>
+            </ul>
+        </div>
+        <!-- Mạng xã hội -->
+        <div class="footer-social">
+            <h3>Kết nối với chúng tôi</h3>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+        </div>
+    </div>
+         <!-- Bản quyền -->
+        <div class="footer-copyright">
+        <p>&copy; 2024 EDEN BEAUTY . Mọi quyền được bảo lưu.</p>
+        </div>
+</footer>
+
+
+</body>
+<script src="index.js"></script>
+</html>
+
